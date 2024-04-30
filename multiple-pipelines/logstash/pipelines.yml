@@ -1,0 +1,16 @@
+- pipeline.id: main
+  queue.type: persisted
+  pipeline.workers: 4
+  pipeline.batch.size: 1000
+  path.config: "/usr/share/logstash/pipeline/00-input.conf"
+- pipeline.id: ops-log
+  queue.type: persisted
+  pipeline.workers: 2
+  pipeline.batch.size: 1000
+  path.config: "/usr/share/logstash/pipeline/99-output-op.conf"
+- pipeline.id: file-log
+  queue.type: persisted
+  pipeline.workers: 2
+  pipeline.batch.size: 1000
+  path.config: "/usr/share/logstash/pipeline/99-output-file.conf"
+
